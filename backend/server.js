@@ -27,7 +27,7 @@ app.post('/api/chat', async (req, res) => {
     });
 
     const data = await response.json();
-    const reply = data.content?.[0]?.text || 'Erreur : pas de réponse.';
+       const reply = data.content?.[0]?.text || JSON.stringify(data);
     res.json({ reply });
   } catch (error) {
     console.error(error);
